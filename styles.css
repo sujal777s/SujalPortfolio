@@ -1,0 +1,272 @@
+body {
+    font-family: 'Helvetica Neue', Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    background-color: #eaf82e;
+    color: #333;
+}
+
+header {
+    background-color: #1e2a38;
+    color: white;
+    padding: 15px 0;
+    text-align: center;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+nav {
+    position: relative;
+    background-color: #1e2a38;
+    display: flex;
+    justify-content: center;
+}
+
+.menu-icon {
+    display: none;
+    font-size: 30px;
+    cursor: pointer;
+    padding: 10px;
+    color: white;
+}
+
+#menu {
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+    text-align: center;
+    background-color: #1e2a38;
+    display: flex;
+    justify-content: center;
+}
+
+#menu li {
+    display: inline;
+    margin: 0 15px;
+}
+
+#menu li a {
+    text-decoration: none;
+    color: white;
+    padding: 14px 20px;
+    display: inline-block;
+    transition: background-color 0.3s;
+}
+
+#menu li a:hover {
+    background-color: #ff6f61;
+}
+
+#menu-toggle {
+    display: none;
+}
+
+#menu-toggle:checked + .menu-icon + #menu {
+    display: block;
+}
+
+@media (max-width: 768px) {
+    .menu-icon {
+        display: block;
+    }
+
+    #menu {
+        display: none;
+        flex-direction: column;
+        text-align: left;
+    }
+
+    #menu.visible {
+        display: block; /* Show the menu when .visible is applied */
+    }
+
+    #menu li {
+        display: block;
+    }
+}
+
+/* Project Grid */
+.project-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 20px;
+    padding: 20px;
+}
+
+.project-item {
+    background-color: white;
+    padding: 20px;
+    text-align: center;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    transition: transform 0.2s, box-shadow 0.2s;
+}
+
+.project-item:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+}
+
+.project-item img {
+    max-width: 100%;
+    height: auto;
+    border-radius: 4px;
+}
+
+main {
+    padding: 20px;
+    text-align: center;
+}
+
+.image-grid {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    margin-top: 20px;
+}
+
+.image-item {
+    margin: 10px;
+}
+
+.image-item img {
+    width: 300px;
+    height: auto;
+    border-radius: 10px;
+}
+
+.profile-pic {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    width: 150px;
+    height: 150px;
+    border-radius: 50%;
+    border: 5px solid white;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+}
+
+footer {
+    text-align: center;
+    background-color: #1e2a38;
+    color: white;
+    padding: 15px 0;
+    box-shadow: 0 -4px 8px rgba(0, 0, 0, 0.1);
+    position: relative;
+}
+
+form {
+    max-width: 600px;
+    margin: 0 auto;
+    background-color: white;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+form label {
+    display: block;
+    margin-top: 10px;
+    color: #333;
+}
+
+form input, form textarea {
+    width: 100%;
+    padding: 10px;
+    margin-top: 5px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    box-sizing: border-box;
+}
+
+form button {
+    background-color: #ff6f61;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    cursor: pointer;
+    margin-top: 10px;
+    border-radius: 4px;
+    transition: background-color 0.3s;
+}
+
+form button:hover {
+    background-color: #e55b52;
+}
+
+@media (max-width: 768px) {
+    nav ul {
+        display: none;
+        flex-direction: column;
+    }
+
+    .menu-icon {
+        display: block;
+        color: white;
+        font-size: 30px;
+        cursor: pointer;
+        margin: 10px;
+    }
+
+    .image-grid {
+        flex-direction: column;
+    }
+}
+.social-icons {
+    display: flex;
+    justify-content: center; /* Align icons horizontally centered */
+    gap: 10px; /* Adjust the gap between icons */
+}
+
+.social-icons a img {
+    width: 100px; /* Adjust the width of the images */
+    height: auto; /* Maintain aspect ratio */
+}
+/* styles.css */
+
+/* Define keyframes animation */
+@keyframes pulse {
+    0% {
+        transform: scale(1);
+    }
+    50% {
+        transform: scale(1.1);
+    }
+    100% {
+        transform: scale(1);
+    }
+}
+
+/* Apply animation to .icon and .social-icons */
+.icon img,
+.social-icons img {
+    animation: pulse 1s infinite alternate;
+}
+
+/* Additional styles */
+.icon img,
+.social-icons img {
+    transition: transform 0.3s ease; /* Optional transition for smoother hover effect */
+}
+
+.icon:hover img,
+.social-icons:hover img {
+    transform: scale(1.2); /* Example: Enlarge on hover */
+}
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 20px;
+}
+
+.social-icons {
+    display: flex;
+    gap: 5px; /* Adjust gap as needed */
+}
+
+.social-icons img {
+    height: 40px; /* Adjust icon size as needed */
+}
+
