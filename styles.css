@@ -1,3 +1,6 @@
+/* styles.css */
+
+/* Reset and general styles */
 body {
     font-family: 'Helvetica Neue', Arial, sans-serif;
     margin: 0;
@@ -8,11 +11,23 @@ body {
 }
 
 header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
     background-color: #1e2a38;
     color: white;
-    padding: 15px 0;
+    padding: 15px 20px;
     text-align: center;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.social-icons {
+    display: flex;
+    gap: 5px; /* Adjust gap as needed */
+}
+
+.social-icons img {
+    height: 10px; /* Adjust icon size */
 }
 
 nav {
@@ -68,6 +83,10 @@ nav {
 @media (max-width: 768px) {
     .menu-icon {
         display: block;
+        color: white;
+        font-size: 30px;
+        cursor: pointer;
+        margin: 10px;
     }
 
     #menu {
@@ -85,10 +104,10 @@ nav {
     }
 }
 
-/* Project Grid */
+
 .project-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    grid-template-columns: repeat(3, 1fr); /* 3 columns */
     gap: 20px;
     padding: 20px;
 }
@@ -195,6 +214,7 @@ form button:hover {
     background-color: #e55b52;
 }
 
+/* Responsive adjustments */
 @media (max-width: 768px) {
     nav ul {
         display: none;
@@ -213,19 +233,43 @@ form button:hover {
         flex-direction: column;
     }
 }
+
+/* Social Icons */
 .social-icons {
     display: flex;
     justify-content: center; /* Align icons horizontally centered */
-    gap: 10px; /* Adjust the gap between icons */
+    gap: 5px; /* Adjust the gap between icons */
 }
 
 .social-icons a img {
-    width: 100px; /* Adjust the width of the images */
+    width: 80px; /* Adjust the width of the images */
     height: auto; /* Maintain aspect ratio */
 }
-/* styles.css */
 
-/* Define keyframes animation */
+/* Report Section */
+.report-section {
+    max-width: 700px;
+    margin: 0 auto;
+    background-color: #f0f0f0; /* Changed background color */
+    padding: 25px; /* Increased padding */
+    border-radius: 10px; /* Slightly increased border radius */
+    box-shadow: 0 5px 10px rgba(0, 0, 0, 0.15); /* Adjusted box shadow */
+}
+
+.report-section h2 {
+    font-size: 2rem; /* Increased font size */
+    color: #ff6347; /* Changed color */
+    margin-bottom: 20px; /* Increased margin bottom */
+}
+
+.report-section p {
+    font-size: 1.2rem; /* Increased font size */
+    line-height: 1.8; /* Increased line height */
+    margin-bottom: 25px; /* Increased margin bottom */
+    color: #555; /* Changed color */
+}
+
+/* Keyframes animation */
 @keyframes pulse {
     0% {
         transform: scale(1);
@@ -244,29 +288,50 @@ form button:hover {
     animation: pulse 1s infinite alternate;
 }
 
-/* Additional styles */
+/* Optional: Transition for smoother hover effect */
 .icon img,
 .social-icons img {
-    transition: transform 0.3s ease; /* Optional transition for smoother hover effect */
+    transition: transform 0.3s ease;
 }
 
+/* Hover effect */
 .icon:hover img,
 .social-icons:hover img {
     transform: scale(1.2); /* Example: Enlarge on hover */
 }
-header {
+
+/* Iframe */
+iframe {
+    border: none;
+    width: 100%;
+    height: 400px; /* Adjust height as needed */
+    /* Add other styles as needed */
+}
+.image-section {
+    max-width: 700px; /* Adjust maximum width as needed */
+    margin: 0 auto; /* Center align horizontally */
+    padding: 20px; /* Add padding around the section */
+    background-color: #f0f0f0; /* Background color */
+    border-radius: 10px; /* Rounded corners */
+    box-shadow: 0 5px 10px rgba(0, 0, 0, 0.15); /* Box shadow for depth */
+}
+
+.image-section h2 {
+    font-size: 2rem; /* Adjust heading font size */
+    color: #ff6347; /* Heading color */
+    margin-bottom: 20px; /* Bottom margin for spacing */
+}
+
+.image-container {
     display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: 10px 20px;
+    flex-wrap: wrap;
+    justify-content: center; /* Center images horizontally */
+    gap: 10px; /* Adjust gap between images */
 }
 
-.social-icons {
-    display: flex;
-    gap: 5px; /* Adjust gap as needed */
+.image-container img {
+    max-width: 100%; /* Ensure images don't exceed container width */
+    height: auto; /* Maintain aspect ratio */
+    border-radius: 8px; /* Rounded corners for images */
+    box-shadow: 0 3px 6px rgba(0, 0, 0, 0.1); /* Subtle box shadow */
 }
-
-.social-icons img {
-    height: 40px; /* Adjust icon size as needed */
-}
-
